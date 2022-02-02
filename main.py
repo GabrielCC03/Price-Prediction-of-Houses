@@ -12,10 +12,16 @@ from sklearn.datasets import load_boston
 
 import matplotlib.pyplot as plt
 
+
 url = "BostonHousing.csv"
 
 data = pd.read_csv(url,nrows=508)
+target = data.values[:, 2] #[1::2, 2]
 
-#print(data)
+data["MEDV"] = target
 
-print(data.describe())
+
+print(data)
+
+
+#print(data.describe())
